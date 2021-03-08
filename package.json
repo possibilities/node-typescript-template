@@ -6,8 +6,11 @@
     "build": "rimraf ./build && tsc",
     "dev": "nodemon",
     "start": "yarn build && node build/index.js",
-    "lint": "eslint . --ext .ts",
-    "format": "prettier 'src/**/*.ts' --write"
+    "format": "prettier 'src/**/*.ts' --write",
+    "lint": "eslint '**/*.ts'",
+    "types": "tsc",
+    "types:watch": "tsc --watch",
+    "lint:watch": "nodemon --exec 'yarn lint' --ext 'ts,tsx,js,md,json,yml' --ignore typescript-out"
   },
   "husky": {
     "hooks": {
